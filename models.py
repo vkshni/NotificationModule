@@ -31,3 +31,10 @@ class DeliveryResult(BaseModel):
 if __name__ == "__main__":
 
     print(Channel.EMAIL.value)
+    notification = NotificationPayload(
+        channel="email",
+        recipient="user@example.com",
+        template="Welcome to our service!",  # Must be >= 10 chars
+    )
+
+    print(notification.model_dump())  # Converts to a dictionary
